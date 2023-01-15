@@ -1,0 +1,96 @@
+
+$ git pull
+Already up to date.
+
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_help/git_help.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+$ git diff
+diff --git a/git_help/git_help.txt b/git_help/git_help.txt
+index 479d8f4..0b22c95 100644
+--- a/git_help/git_help.txt
++++ b/git_help/git_help.txt
+@@ -1,8 +1,12 @@
++алгоритм использования git
++git pull - загрузить данные с облака на локальный репозиторий (для синхронизации)
+ git status - отобразить информацию об изменениях
++git diff - просмотр изменений (по умолчанию - непроидексированных)
+ как вливать изменения:
+ git add file.txt
+ git status - проверка
+ git commit -m "комментарий" - закоммитить + создать комментарий (сразу без открытия vim)
++git push - загрузить данные с локального репозитроия в облако (для синхронизации)
+
+ комманды vim
+ insert - войти в режим редактирования
+@@ -10,3 +14,15 @@ esc - выйти из режима редактирования
+ :wq - сохранить изменения и выйти
+ :q! - выйти без сохранения изменений
+ Если вы нажмете Ctrl+ sво время использования vim, это приведет к тому, что vim будет выглядеть так, как будто он заблокирован / застрял, и вы не сможете вносить дополнительные изменения, если не нажмете Ctrl+ q.
++
++комманды терминала bash
++mkdir - создать папку
++cd <dir> - перейти в папку <dir>
++ls - показать содержимое папки
++. - путь до текущей папки (git add . - проиндексировать текущую папку, т.е. все файлы в ней)
++.. - путь до верхнего каталога cd .. - перейти в каталог выше
++rm -r <dir> - удалить папку <dir>
++rm <file> - удалить файл
++ИЗМЕНЕНИЯ
++
++
+
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_help/git_help.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+$ git add git_help/git_help.txt
+
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   git_help/git_help.txt
+
+
+
+$ git commit -m "add basic version of notes 4.0"
+[main 5c9f5ac] add basic version of notes 4.0
+ 1 file changed, 16 insertions(+)
+
+
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 1.08 KiB | 551.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:lipatushka/homework.git
+   509e9f3..5c9f5ac  main -> main
+
+
+$
